@@ -20,3 +20,15 @@ export interface GetTodosResponse {
   todos: Array<TodoObject>
   total: number
 }
+
+export interface PostObject {
+  userId: number
+  id: number
+  title: string
+  body: string
+}
+
+export interface postsResponse {
+  total: number
+  posts: Array<PostObject>
+}
