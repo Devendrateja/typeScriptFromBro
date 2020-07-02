@@ -62,6 +62,7 @@ class TodosRoute extends Component<TodosRouteProps> {
   }
 
   renderSuccessUI = observer(() => {
+    console.log(this.getTodoStore())
     const { todos, todosLeftCount } = this.getTodoStore()
     return (
       <TodosWrapper>
@@ -81,6 +82,7 @@ class TodosRoute extends Component<TodosRouteProps> {
 
   render() {
     const { getTodoListAPIStatus, getTodoListAPIError } = this.getTodoStore()
+    console.log('api status in todos router ', getTodoListAPIStatus)
     return (
       <LoadingWrapperWithFailure
         apiStatus={getTodoListAPIStatus}

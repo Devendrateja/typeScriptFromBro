@@ -1,0 +1,9 @@
+{
+  "title": "POSTS",
+  "name": "DevendraTeja",
+  "source": "FB",
+  "idsLeft": "id left",
+  "idsLeft_plural": "ids left",
+  "idsLeftWithParameter": "still {{count}} id left",
+  "idsLeftWithParameter_plural": "still {{count}} ids left"
+}

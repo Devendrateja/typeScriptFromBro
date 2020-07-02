@@ -15,6 +15,8 @@ class TodoStore {
 
   constructor(todoService: TodoService) {
     this.todoService = todoService
+    console.log(' store constructor')
+
     this.init()
   }
 
@@ -27,11 +29,13 @@ class TodoStore {
 
   @action.bound
   setGetTodoListAPIStatus(status) {
+    console.log('api status in store', status)
     this.getTodoListAPIStatus = status
   }
 
   @action.bound
   setGetTodoListAPIError(error) {
+    console.log('api status error', error)
     this.getTodoListAPIError = error
   }
 
@@ -46,6 +50,7 @@ class TodoStore {
 
   @action.bound
   getTodoList() {
+    console.log('get todoslist')
     const getTodosPromise = this.todoService.getTodosAPI()
     return bindPromiseWithOnSuccess(getTodosPromise)
       .to(this.setGetTodoListAPIStatus, this.setTodoListResponse)
