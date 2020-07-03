@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Provider } from 'mobx-react'
 import { I18nextProvider } from 'react-i18next'
-
+import { resolveWithTimeout } from './utils/TestUtils'
 import HomeRoute from './routes/HomeRoute'
 import SampleRoute from './routes/SampleRoute'
 
@@ -24,7 +24,7 @@ const App = () => {
   return (
     <Provider {...stores}>
       <I18nextProvider i18n={i18n}>
-        <Suspense fallback={<div>loading</div>}>
+        <Suspense fallback={<div>loading...</div>}>
           <Router basename={process.env.PUBLIC_URL}>
             <Switch>
               <Route exact path={SAMPLE_ROUTE_PATH}>
